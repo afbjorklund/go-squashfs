@@ -1,18 +1,11 @@
 package decompress
 
 import (
-	"bytes"
-	"io"
-
-	"github.com/ulikunitz/xz/lzma"
+	"fmt"
 )
 
 type Lzma struct{}
 
-func (l Lzma) Decompress(data []byte) ([]byte, error) {
-	rdr, err := lzma.NewReader(bytes.NewReader(data))
-	if err != nil {
-		return nil, err
-	}
-	return io.ReadAll(rdr)
+func (l Lzma) Decompress(_ []byte) ([]byte, error) {
+	return nil, fmt.Errorf("lzma is not supported")
 }

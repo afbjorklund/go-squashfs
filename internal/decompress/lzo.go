@@ -1,13 +1,11 @@
 package decompress
 
 import (
-	"bytes"
-
-	"github.com/rasky/go-lzo"
+	"fmt"
 )
 
 type Lzo struct{}
 
-func (l Lzo) Decompress(data []byte) ([]byte, error) {
-	return lzo.Decompress1X(bytes.NewReader(data), len(data), 0)
+func (l Lzo) Decompress(_ []byte) ([]byte, error) {
+	return nil, fmt.Errorf("lzo is not supported")
 }
