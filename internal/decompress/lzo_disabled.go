@@ -1,5 +1,3 @@
-//go:build no_gpl
-
 package decompress
 
 import "errors"
@@ -7,9 +5,9 @@ import "errors"
 type Lzo struct{}
 
 func NewLzo() (Lzo, error) {
-	return Lzo{}, errors.New("lzo compression is disable in this build with no_gpl")
+	return Lzo{}, errors.New("lzo compression is disable")
 }
 
 func (l Lzo) Decompress(data []byte) ([]byte, error) {
-	return nil, errors.New("lzo compression is disable in this build with no_gpl")
+	return nil, errors.New("lzo compression is disable")
 }

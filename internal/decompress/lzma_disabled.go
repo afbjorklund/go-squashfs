@@ -1,5 +1,3 @@
-//go:build no_obsolete
-
 package decompress
 
 import (
@@ -9,9 +7,9 @@ import (
 type Lzma struct{}
 
 func NewLzma() (Lzma, error) {
-	return Lzma{}, errors.New("lzma compression is disable in this build with no_obsolete")
+	return Lzma{}, errors.New("lzma compression is disable")
 }
 
 func (l Lzma) Decompress(data []byte) ([]byte, error) {
-	return nil, errors.New("lzma compression is disable in this build with no_obsolete")
+	return nil, errors.New("lzma compression is disable")
 }
